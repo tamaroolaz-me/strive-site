@@ -102,9 +102,10 @@ export default function BlogPost({ source, frontmatter, slug }: BlogPostProps) {
             Strive<span>.</span>
           </a>
           <ul className="nav-links">
+            <li><a href="https://www.strivemath.com">Coding</a></li>
             <li><Link href="/math">Mathematics</Link></li>
             <li><Link href="/ai-first-software-development">AI-First Software Development</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/holidaycamps">Holiday Bootcamps</Link></li>
           </ul>
           <a href={trialUrl} className="nav-cta">Book a Free Trial</a>
         </div>
