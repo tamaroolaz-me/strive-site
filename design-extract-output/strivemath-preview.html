@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Strive Math — Design Language Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Roboto:wght@400;700&family=Inconsolata:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Jost', sans-serif; background: #f3f3f8; color: #0F1574; }
+
+  .page { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-size: 48px; font-weight: 700; margin-bottom: 8px; background: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .subtitle { color: #575863; font-size: 16px; margin-bottom: 64px; }
+  section { margin-bottom: 64px; }
+  h2 { font-size: 24px; font-weight: 700; color: #0F1574; margin-bottom: 24px; padding-bottom: 8px; border-bottom: 2px solid #f1eeff; }
+  h3 { font-size: 14px; font-weight: 600; color: #878AB9; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+
+  /* Color swatches */
+  .swatches { display: flex; flex-wrap: wrap; gap: 16px; }
+  .swatch { width: 140px; }
+  .swatch-block { height: 80px; border-radius: 12px; margin-bottom: 8px; box-shadow: 0px 4px 11px rgba(0,0,0,0.1); }
+  .swatch-name { font-size: 13px; font-weight: 600; color: #0F1574; }
+  .swatch-hex { font-size: 12px; color: #575863; font-family: 'Inconsolata', monospace; }
+
+  /* Gradient */
+  .gradient-strip { height: 64px; border-radius: 32px; margin-bottom: 12px; }
+  .gradient-label { font-size: 13px; color: #575863; font-family: 'Inconsolata', monospace; margin-bottom: 16px; }
+
+  /* Typography */
+  .type-samples { display: flex; flex-direction: column; gap: 16px; }
+  .type-row { display: flex; align-items: baseline; gap: 24px; padding: 16px; background: white; border-radius: 12px; }
+  .type-meta { font-size: 12px; color: #878AB9; font-family: 'Inconsolata', monospace; min-width: 180px; }
+  .type-sample { color: #0F1574; }
+
+  /* Font family rows */
+  .font-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+  .font-name-tag { font-size: 12px; color: #878AB9; font-family: 'Inconsolata', monospace; }
+
+  /* Shadows */
+  .shadows-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+  .shadow-card { background: white; border-radius: 16px; padding: 24px; width: 200px; text-align: center; }
+  .shadow-label { font-size: 12px; color: #575863; margin-top: 8px; font-family: 'Inconsolata', monospace; }
+
+  /* Border radius */
+  .radii-grid { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+  .radius-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .radius-box { width: 60px; height: 60px; background: #7058FF; opacity: 0.7; }
+  .radius-label { font-size: 12px; color: #575863; font-family: 'Inconsolata', monospace; text-align: center; }
+
+  /* Buttons */
+  .buttons-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .btn { padding: 14px 28px; border: none; cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 16px; transition: 200ms; }
+  .btn-primary { background: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF); color: white; border-radius: 100px; }
+  .btn-primary:hover { background: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF, #2C81ED, #B0EB33); }
+  .btn-outline { background: transparent; color: #7058FF; border: 2px solid #7058FF; border-radius: 100px; }
+  .btn-navy { background: #0F1574; color: white; border-radius: 16px; }
+
+  /* Cards */
+  .cards-row { display: flex; flex-wrap: wrap; gap: 24px; }
+  .card { background: white; border-radius: 16px; padding: 24px; flex: 1; min-width: 220px; }
+  .card-purple { background: #f1eeff; border-radius: 24px; padding: 24px; flex: 1; min-width: 220px; }
+  .card-navy { background: linear-gradient(315deg, #134297 0%, #00266b 100%); border-radius: 24px; padding: 24px; color: white; flex: 1; min-width: 220px; }
+  .card-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .card-text { font-size: 14px; opacity: 0.8; }
+
+  /* Code sample */
+  .code-block { background: #0F1574; border-radius: 12px; padding: 24px; font-family: 'Inconsolata', monospace; font-size: 14px; color: #B0EB33; }
+  .code-comment { color: #878AB9; }
+  .code-keyword { color: #FF4F84; }
+  .code-string { color: #FFA41C; }
+
+  /* Accessibility */
+  .a11y-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .a11y-chip { padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; }
+  .a11y-aaa { background: #B0EB33; color: #0F1574; }
+  .a11y-aa { background: #2C81ED; color: white; }
+  .a11y-info { background: #f1eeff; color: #7058FF; }
+
+  footer { text-align: center; font-size: 13px; color: #878AB9; padding: 32px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Strive Math</h1>
+  <p class="subtitle">Design Language — Extracted April 2026 · Next.js + Chakra UI</p>
+
+  <!-- COLORS -->
+  <section>
+    <h2>Color Palette</h2>
+    <h3>Brand</h3>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-block" style="background:#0F1574"></div><div class="swatch-name">Primary</div><div class="swatch-hex">#0F1574</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#878AB9"></div><div class="swatch-name">Primary Light</div><div class="swatch-hex">#878AB9</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FF6635"></div><div class="swatch-name">Primary Orange</div><div class="swatch-hex">#FF6635</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFB39A"></div><div class="swatch-name">Orange Tint</div><div class="swatch-hex">#FFB39A</div></div>
+    </div>
+    <br/>
+    <h3>Accents</h3>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-block" style="background:#7058FF"></div><div class="swatch-name">Accent Purple</div><div class="swatch-hex">#7058FF</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FF4F84"></div><div class="swatch-name">Accent Pink</div><div class="swatch-hex">#FF4F84</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#FFA41C"></div><div class="swatch-name">Accent Orange</div><div class="swatch-hex">#FFA41C</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#B0EB33"></div><div class="swatch-name">Accent Green</div><div class="swatch-hex">#B0EB33</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#2C81ED"></div><div class="swatch-name">Accent Blue</div><div class="swatch-hex">#2C81ED</div></div>
+    </div>
+    <br/>
+    <h3>Text & Backgrounds</h3>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-block" style="background:#575863; border:1px solid #eee"></div><div class="swatch-name">Text Dark</div><div class="swatch-hex">#575863</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#B1B1C2; border:1px solid #eee"></div><div class="swatch-name">Text Muted</div><div class="swatch-hex">#B1B1C2</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#484D97"></div><div class="swatch-name">BG Navy</div><div class="swatch-hex">#484D97</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#f1eeff; border:1px solid #e0d8ff"></div><div class="swatch-name">BG Purple Tint</div><div class="swatch-hex">#f1eeff</div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#f3f3f8; border:1px solid #e8e8f0"></div><div class="swatch-name">BG Subtle</div><div class="swatch-hex">#f3f3f8</div></div>
+    </div>
+  </section>
+
+  <!-- GRADIENTS -->
+  <section>
+    <h2>Gradients</h2>
+    <div class="gradient-strip" style="background: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF)"></div>
+    <p class="gradient-label">Rainbow CTA → linear-gradient(to right, #FFA41C, #FF4F84, #7058FF)</p>
+
+    <div class="gradient-strip" style="background: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF, #2C81ED, #B0EB33)"></div>
+    <p class="gradient-label">Rainbow Full → accentOrange → accentPink → accentPurple → accentBlue → accentGreen</p>
+
+    <div class="gradient-strip" style="background: linear-gradient(315deg, #134297 0%, #0F3C8E 20%, #0B3785 40%, #07317C 60%, #032B74 80%, #00266b 100%)"></div>
+    <p class="gradient-label">Navy Hero → 315deg dark blue range</p>
+
+    <div class="gradient-strip" style="background: linear-gradient(to right, #FE6636, #FF4F84 40%, #7058FF 80%)"></div>
+    <p class="gradient-label">Coral-Purple → linear-gradient(to right, #FE6636, #FF4F84 40%, #7058FF 80%)</p>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section>
+    <h2>Typography</h2>
+    <h3>Font Families</h3>
+    <div class="font-card"><span style="font-family:'Jost',sans-serif; font-size:22px; font-weight:700;">Jost — Headings & UI</span><span class="font-name-tag">font-family: 'Jost', sans-serif · weights: 400–700</span></div>
+    <div class="font-card"><span style="font-family:'Roboto',sans-serif; font-size:18px;">Roboto — Body copy</span><span class="font-name-tag">font-family: 'Roboto', sans-serif · weight: 400</span></div>
+    <div class="font-card" style="background:#0F1574;"><span style="font-family:'Inconsolata',monospace; font-size:18px; color:#B0EB33;">Inconsolata — Code</span><span class="font-name-tag" style="color:#878AB9;">font-family: 'Inconsolata', monospace · weights: 400–900</span></div>
+    <br/>
+    <h3>Type Scale</h3>
+    <div class="type-samples">
+      <div class="type-row"><span class="type-meta">display · 100px · 700</span><span class="type-sample" style="font-size:60px; font-weight:700; line-height:1;">Aa</span></div>
+      <div class="type-row"><span class="type-meta">hero · 60px · 700</span><span class="type-sample" style="font-size:42px; font-weight:700;">Learn to Code</span></div>
+      <div class="type-row"><span class="type-meta">3xl · 40px · 700</span><span class="type-sample" style="font-size:32px; font-weight:700;">Section Heading</span></div>
+      <div class="type-row"><span class="type-meta">2xl · 30px · 600</span><span class="type-sample" style="font-size:26px; font-weight:600;">Card Title</span></div>
+      <div class="type-row"><span class="type-meta">xl · 24px · 500</span><span class="type-sample" style="font-size:22px; font-weight:500;">Subheading Text</span></div>
+      <div class="type-row"><span class="type-meta">lg · 20px · 400</span><span class="type-sample" style="font-size:20px; font-weight:400; color:#575863;">Large body text used for lead paragraphs and emphasis.</span></div>
+      <div class="type-row"><span class="type-meta">base · 16px · 400</span><span class="type-sample" style="font-size:16px; color:#575863;">Regular body copy. Your kid's coding journey starts here.</span></div>
+      <div class="type-row"><span class="type-meta">sm · 14px · 400</span><span class="type-sample" style="font-size:14px; color:#B1B1C2;">Caption and label text for secondary information.</span></div>
+    </div>
+  </section>
+
+  <!-- SHADOWS -->
+  <section>
+    <h2>Shadows</h2>
+    <div class="shadows-grid">
+      <div class="shadow-card" style="box-shadow: 0px 8px 30.26px rgba(15, 21, 116, 0.07)"><div style="font-size:32px;">📦</div><div class="shadow-label">card</div></div>
+      <div class="shadow-card" style="box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1)"><div style="font-size:32px;">📦</div><div class="shadow-label">card-md</div></div>
+      <div class="shadow-card" style="box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.1)"><div style="font-size:32px;">📦</div><div class="shadow-label">card-lg</div></div>
+      <div class="shadow-card" style="box-shadow: 0 14px 24px #00000033"><div style="font-size:32px;">📦</div><div class="shadow-label">elevated</div></div>
+      <div class="shadow-card" style="box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.31)"><div style="font-size:32px;">📦</div><div class="shadow-label">button</div></div>
+      <div class="shadow-card" style="box-shadow: 0px 0px 48px 0px rgb(199 199 224)"><div style="font-size:32px;">📦</div><div class="shadow-label">glow</div></div>
+    </div>
+  </section>
+
+  <!-- BORDER RADIUS -->
+  <section>
+    <h2>Border Radius</h2>
+    <div class="radii-grid">
+      <div class="radius-item"><div class="radius-box" style="border-radius:5px"></div><div class="radius-label">5px<br/>sm</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:7px"></div><div class="radius-label">7px<br/>md</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:16px"></div><div class="radius-label">16px<br/>card</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:24px"></div><div class="radius-label">24px<br/>card-lg</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:32px"></div><div class="radius-label">32px<br/>card-xl</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:100px; width:80px; height:40px"></div><div class="radius-label">100px<br/>pill</div></div>
+      <div class="radius-item"><div class="radius-box" style="border-radius:9999px; width:60px; height:60px"></div><div class="radius-label">full<br/>circle</div></div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section>
+    <h2>Components</h2>
+    <h3>Buttons</h3>
+    <div class="buttons-row">
+      <button class="btn btn-primary">Get Started Free</button>
+      <button class="btn btn-outline">Learn More</button>
+      <button class="btn btn-navy">View Curriculum</button>
+    </div>
+    <br/><br/>
+    <h3>Cards</h3>
+    <div class="cards-row">
+      <div class="card" style="box-shadow: 0px 8px 30.26px rgba(15,21,116,0.07)">
+        <div class="card-title">Default Card</div>
+        <div class="card-text" style="color:#575863;">White background with subtle navy shadow. Used for course cards and feature blocks.</div>
+      </div>
+      <div class="card-purple">
+        <div class="card-title">Purple Tint Card</div>
+        <div class="card-text" style="color:#7058FF;">Light purple background (#f1eeff). Used for highlighted features.</div>
+      </div>
+      <div class="card-navy">
+        <div class="card-title">Navy Hero Card</div>
+        <div class="card-text">Dark gradient background for CTAs and pricing sections.</div>
+      </div>
+    </div>
+    <br/><br/>
+    <h3>Code Block</h3>
+    <div class="code-block">
+<span class="code-comment"># Strive Math — Python example</span><br/>
+<span class="code-keyword">def</span> <span style="color:#2C81ED">calculate_area</span>(radius):<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">import</span> math<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> math.pi * radius ** <span class="code-string">2</span><br/>
+<br/>
+<span style="color:#B0EB33">print</span>(calculate_area(<span class="code-string">5</span>))
+    </div>
+  </section>
+
+  <!-- ACCESSIBILITY -->
+  <section>
+    <h2>Accessibility</h2>
+    <div class="a11y-row" style="margin-bottom:16px">
+      <span class="a11y-chip a11y-aaa">WCAG AAA</span>
+      <span>Primary #0F1574 on white — contrast 15.8:1</span>
+    </div>
+    <div class="a11y-row" style="margin-bottom:16px">
+      <span class="a11y-chip a11y-aa">WCAG AA</span>
+      <span>Text Dark #575863 on white — contrast 7.4:1</span>
+    </div>
+    <div class="a11y-row" style="margin-bottom:16px">
+      <span class="a11y-chip a11y-info">Light only</span>
+      <span>No dark mode — <code>useSystemColorMode: false</code></span>
+    </div>
+    <div class="a11y-row">
+      <span class="a11y-chip" style="background:#f1eeff; color:#7058FF">Focus ring</span>
+      <span>0px 0px 0px 3px white, 0px 0px 0px 6px hsla(249, 100%, 67%, 0.3)</span>
+    </div>
+  </section>
+</div>
+
+<footer>Strive Math Design Language · Extracted April 2026 · Next.js + Chakra UI</footer>
+</body>
+</html>

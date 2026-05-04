@@ -1,0 +1,146 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "source": "https://www.strivemath.com/",
+  "extracted": "2026-04-23",
+
+  "color": {
+    "primary": {
+      "$value": "#0F1574",
+      "$type": "color",
+      "$description": "Dark navy — headings, primary text, CTA backgrounds"
+    },
+    "primary-light": {
+      "$value": "#878AB9",
+      "$type": "color",
+      "$description": "Muted purple-grey — secondary text"
+    },
+    "primary-orange": {
+      "$value": "#FF6635",
+      "$type": "color",
+      "$description": "Coral orange — highlights"
+    },
+    "primary-orange-tint": {
+      "$value": "#FFB39A",
+      "$type": "color",
+      "$description": "Peach tint"
+    },
+    "accent-purple": {
+      "$value": "#7058FF",
+      "$type": "color",
+      "$description": "Primary accent — buttons, hover glows, focus rings"
+    },
+    "accent-pink": {
+      "$value": "#FF4F84",
+      "$type": "color",
+      "$description": "Energy color used in gradients"
+    },
+    "accent-orange": {
+      "$value": "#FFA41C",
+      "$type": "color",
+      "$description": "Warmth color used in gradients"
+    },
+    "accent-green": {
+      "$value": "#B0EB33",
+      "$type": "color",
+      "$description": "Success / vibrancy"
+    },
+    "accent-blue": {
+      "$value": "#2C81ED",
+      "$type": "color",
+      "$description": "Trust / links"
+    },
+    "text-dark": {
+      "$value": "#575863",
+      "$type": "color",
+      "$description": "Primary body text"
+    },
+    "text-muted": {
+      "$value": "#B1B1C2",
+      "$type": "color",
+      "$description": "Captions, placeholders"
+    },
+    "bg-navy": {
+      "$value": "#484D97",
+      "$type": "color",
+      "$description": "Dark section backgrounds"
+    },
+    "bg-purple-tint": {
+      "$value": "#f1eeff",
+      "$type": "color",
+      "$description": "Light purple card backgrounds"
+    },
+    "bg-subtle": {
+      "$value": "#f3f3f8",
+      "$type": "color",
+      "$description": "Alternate section backgrounds"
+    }
+  },
+
+  "font-family": {
+    "heading": {
+      "$value": "Jost, sans-serif",
+      "$type": "fontFamily"
+    },
+    "body": {
+      "$value": "Roboto, sans-serif",
+      "$type": "fontFamily"
+    },
+    "mono": {
+      "$value": "Inconsolata, monospace",
+      "$type": "fontFamily"
+    }
+  },
+
+  "font-size": {
+    "xs": { "$value": "12px", "$type": "dimension" },
+    "sm": { "$value": "14px", "$type": "dimension" },
+    "base": { "$value": "16px", "$type": "dimension" },
+    "lg": { "$value": "20px", "$type": "dimension" },
+    "xl": { "$value": "24px", "$type": "dimension" },
+    "2xl": { "$value": "30px", "$type": "dimension" },
+    "3xl": { "$value": "40px", "$type": "dimension" },
+    "hero": { "$value": "60px", "$type": "dimension" },
+    "display": { "$value": "100px", "$type": "dimension" }
+  },
+
+  "font-weight": {
+    "regular": { "$value": 400, "$type": "fontWeight" },
+    "medium": { "$value": 500, "$type": "fontWeight" },
+    "semibold": { "$value": 600, "$type": "fontWeight" },
+    "bold": { "$value": 700, "$type": "fontWeight" },
+    "black": { "$value": 900, "$type": "fontWeight" }
+  },
+
+  "border-radius": {
+    "sm": { "$value": "5px", "$type": "dimension" },
+    "md": { "$value": "7px", "$type": "dimension" },
+    "card": { "$value": "16px", "$type": "dimension" },
+    "card-lg": { "$value": "24px", "$type": "dimension" },
+    "card-xl": { "$value": "32px", "$type": "dimension" },
+    "pill": { "$value": "100px", "$type": "dimension" },
+    "full": { "$value": "9999px", "$type": "dimension" }
+  },
+
+  "shadow": {
+    "card": { "$value": "0px 8px 30.26px rgba(15, 21, 116, 0.07)", "$type": "shadow" },
+    "card-md": { "$value": "0px 8px 24px rgba(0, 0, 0, 0.1)", "$type": "shadow" },
+    "card-lg": { "$value": "0px 15px 30px 0px rgba(0, 0, 0, 0.1)", "$type": "shadow" },
+    "elevated": { "$value": "0 14px 24px #00000033", "$type": "shadow" },
+    "button": { "$value": "0px 4px 11px rgba(0, 0, 0, 0.31)", "$type": "shadow" },
+    "focus": { "$value": "0px 0px 0px 3px white, 0px 0px 0px 6px hsla(249, 100%, 67%, 0.3)", "$type": "shadow" },
+    "glow": { "$value": "0px 0px 48px 0px rgb(199 199 224)", "$type": "shadow" }
+  },
+
+  "duration": {
+    "fast": { "$value": "150ms", "$type": "duration" },
+    "base": { "$value": "200ms", "$type": "duration" },
+    "slow": { "$value": "300ms", "$type": "duration" }
+  },
+
+  "breakpoint": {
+    "sm": { "$value": "480px", "$type": "dimension" },
+    "md": { "$value": "768px", "$type": "dimension" },
+    "lg": { "$value": "1230px", "$type": "dimension" },
+    "xl": { "$value": "1280px", "$type": "dimension" }
+  }
+}

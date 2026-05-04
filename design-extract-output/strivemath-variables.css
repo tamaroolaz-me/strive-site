@@ -1,0 +1,92 @@
+/* Strive Math — CSS Custom Properties */
+/* Extracted from https://www.strivemath.com/ */
+
+:root {
+  /* === Brand Colors === */
+  --color-primary: #0F1574;
+  --color-primary-light: #878AB9;
+  --color-primary-orange-100: #FF6635;
+  --color-primary-orange-50: #FFB39A;
+
+  /* === Accent Colors === */
+  --color-accent-purple: #7058FF;
+  --color-accent-pink: #FF4F84;
+  --color-accent-orange: #FFA41C;
+  --color-accent-green: #B0EB33;
+  --color-accent-blue: #2C81ED;
+
+  /* === Text Colors === */
+  --color-text-dark: #575863;
+  --color-text-muted: #B1B1C2;
+  --color-text-white: #FFFFFF;
+
+  /* === Background Colors === */
+  --color-bg-white: #FFFFFF;
+  --color-bg-frosted: #ffffffbb;
+  --color-bg-navy: #484D97;
+  --color-bg-purple-tint: #f1eeff;
+  --color-bg-subtle: #f3f3f8;
+  --color-bg-dark: #222222;
+  --color-bg-light-grey: #d9d9d9;
+
+  /* === Gradients === */
+  --gradient-rainbow-cta: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF);
+  --gradient-rainbow-full: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF, #2C81ED, #B0EB33);
+  --gradient-navy-hero: linear-gradient(315deg, #134297 0%, #0F3C8E 20%, #0B3785 40%, #07317C 60%, #032B74 80%, #00266b 100%);
+  --gradient-dark-fade: linear-gradient(to bottom, #484C97, #484C9766);
+  --gradient-coral-purple: linear-gradient(to right, #FE6636, #FF4F84 40%, #7058FF 80%);
+
+  /* === Typography === */
+  --font-heading: 'Jost', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-mono: 'Inconsolata', monospace;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 30px;
+  --font-size-3xl: 40px;
+  --font-size-hero: 60px;
+  --font-size-display: 100px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --letter-spacing-tight: 0.01rem;
+  --letter-spacing-wide: 0.02em;
+
+  /* === Border Radius === */
+  --radius-sm: 5px;
+  --radius-md: 7px;
+  --radius-card: 16px;
+  --radius-card-lg: 24px;
+  --radius-card-xl: 32px;
+  --radius-pill: 100px;
+  --radius-full: 9999px;
+
+  /* === Shadows === */
+  --shadow-card: 0px 8px 30.26px rgba(15, 21, 116, 0.07);
+  --shadow-card-md: 0px 8px 24px rgba(0, 0, 0, 0.1);
+  --shadow-card-lg: 0px 15px 30px 0px rgba(0, 0, 0, 0.1);
+  --shadow-elevated: 0 14px 24px #00000033;
+  --shadow-button: 0px 4px 11px rgba(0, 0, 0, 0.31);
+  --shadow-focus: 0px 0px 0px 3px white, 0px 0px 0px 6px hsla(249, 100%, 67%, 0.3);
+  --shadow-glow: 0px 0px 48px 0px rgb(199 199 224);
+
+  /* === Transitions === */
+  --transition-fast: 0.15s all;
+  --transition-base: 0.2s all;
+  --transition-transform: transform 0.3s;
+  --transition-slow: width 1s;
+
+  /* === Layout === */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1230px;
+  --breakpoint-xl: 1280px;
+}

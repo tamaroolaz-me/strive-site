@@ -1,0 +1,81 @@
+/* Strive Math — shadcn/ui Theme */
+/* Paste into your globals.css */
+/* Extracted from https://www.strivemath.com/ */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 237 80% 26%; /* #0F1574 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 237 80% 26%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 237 80% 26%;
+
+    --primary: 237 80% 26%; /* #0F1574 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 242 37% 56%; /* #878AB9 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 17% 97%; /* #f3f3f8 */
+    --muted-foreground: 238 13% 53%; /* #575863 */
+
+    --accent: 249 100% 67%; /* #7058FF */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 341 100% 65%; /* #FF4F84 */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 17% 91%;
+    --input: 240 17% 91%;
+    --ring: 249 100% 67%; /* #7058FF */
+
+    --radius: 1rem; /* 16px card default */
+
+    /* === Strive Custom Tokens === */
+    --strive-primary: #0F1574;
+    --strive-primary-light: #878AB9;
+    --strive-accent-purple: #7058FF;
+    --strive-accent-pink: #FF4F84;
+    --strive-accent-orange: #FFA41C;
+    --strive-accent-green: #B0EB33;
+    --strive-accent-blue: #2C81ED;
+    --strive-gradient-cta: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF);
+    --strive-gradient-full: linear-gradient(to right, #FFA41C, #FF4F84, #7058FF, #2C81ED, #B0EB33);
+    --strive-gradient-hero: linear-gradient(315deg, #134297 0%, #0F3C8E 20%, #0B3785 40%, #07317C 60%, #032B74 80%, #00266b 100%);
+    --strive-font-heading: 'Jost', sans-serif;
+    --strive-font-mono: 'Inconsolata', monospace;
+  }
+}
+
+/* Strive utility classes */
+.strive-gradient-text {
+  background: var(--strive-gradient-cta);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.strive-btn-primary {
+  background: var(--strive-gradient-cta);
+  color: white;
+  border-radius: 100px;
+  transition: 200ms;
+}
+
+.strive-btn-primary:hover {
+  background: var(--strive-gradient-full);
+}
+
+.strive-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0px 8px 30.26px rgba(15, 21, 116, 0.07);
+}
+
+.strive-section-navy {
+  background: var(--strive-gradient-hero);
+  color: white;
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Strive Math",
+  "version": "1.0.0",
+  "source": "https://www.strivemath.com/",
+  "collections": [
+    {
+      "name": "Colors/Brand",
+      "modes": ["Light"],
+      "variables": [
+        { "name": "Primary", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.059, "g": 0.082, "b": 0.455, "a": 1 } } },
+        { "name": "Primary Light", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.529, "g": 0.541, "b": 0.725, "a": 1 } } },
+        { "name": "Primary Orange", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 1.0, "g": 0.4, "b": 0.208, "a": 1 } } },
+        { "name": "Primary Orange Tint", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 1.0, "g": 0.702, "b": 0.604, "a": 1 } } }
+      ]
+    },
+    {
+      "name": "Colors/Accent",
+      "modes": ["Light"],
+      "variables": [
+        { "name": "Accent Purple", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.439, "g": 0.345, "b": 1.0, "a": 1 } } },
+        { "name": "Accent Pink", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 1.0, "g": 0.31, "b": 0.518, "a": 1 } } },
+        { "name": "Accent Orange", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 1.0, "g": 0.643, "b": 0.11, "a": 1 } } },
+        { "name": "Accent Green", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.69, "g": 0.922, "b": 0.2, "a": 1 } } },
+        { "name": "Accent Blue", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.173, "g": 0.506, "b": 0.929, "a": 1 } } }
+      ]
+    },
+    {
+      "name": "Colors/Text",
+      "modes": ["Light"],
+      "variables": [
+        { "name": "Text Dark", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.341, "g": 0.345, "b": 0.388, "a": 1 } } },
+        { "name": "Text Muted", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.694, "g": 0.694, "b": 0.761, "a": 1 } } },
+        { "name": "Text White", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 1, "g": 1, "b": 1, "a": 1 } } }
+      ]
+    },
+    {
+      "name": "Colors/Backgrounds",
+      "modes": ["Light"],
+      "variables": [
+        { "name": "BG White", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 1, "g": 1, "b": 1, "a": 1 } } },
+        { "name": "BG Navy", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.282, "g": 0.302, "b": 0.592, "a": 1 } } },
+        { "name": "BG Purple Tint", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.945, "g": 0.937, "b": 1.0, "a": 1 } } },
+        { "name": "BG Subtle", "resolvedType": "COLOR", "valuesByMode": { "Light": { "r": 0.953, "g": 0.953, "b": 0.973, "a": 1 } } }
+      ]
+    },
+    {
+      "name": "Typography",
+      "modes": ["Default"],
+      "variables": [
+        { "name": "Font/Heading", "resolvedType": "STRING", "valuesByMode": { "Default": "Jost, sans-serif" } },
+        { "name": "Font/Body", "resolvedType": "STRING", "valuesByMode": { "Default": "Roboto, sans-serif" } },
+        { "name": "Font/Mono", "resolvedType": "STRING", "valuesByMode": { "Default": "Inconsolata, monospace" } },
+        { "name": "Size/XS", "resolvedType": "FLOAT", "valuesByMode": { "Default": 12 } },
+        { "name": "Size/SM", "resolvedType": "FLOAT", "valuesByMode": { "Default": 14 } },
+        { "name": "Size/Base", "resolvedType": "FLOAT", "valuesByMode": { "Default": 16 } },
+        { "name": "Size/LG", "resolvedType": "FLOAT", "valuesByMode": { "Default": 20 } },
+        { "name": "Size/XL", "resolvedType": "FLOAT", "valuesByMode": { "Default": 24 } },
+        { "name": "Size/2XL", "resolvedType": "FLOAT", "valuesByMode": { "Default": 30 } },
+        { "name": "Size/Hero", "resolvedType": "FLOAT", "valuesByMode": { "Default": 60 } },
+        { "name": "Size/Display", "resolvedType": "FLOAT", "valuesByMode": { "Default": 100 } }
+      ]
+    },
+    {
+      "name": "Radius",
+      "modes": ["Default"],
+      "variables": [
+        { "name": "SM", "resolvedType": "FLOAT", "valuesByMode": { "Default": 5 } },
+        { "name": "MD", "resolvedType": "FLOAT", "valuesByMode": { "Default": 7 } },
+        { "name": "Card", "resolvedType": "FLOAT", "valuesByMode": { "Default": 16 } },
+        { "name": "Card LG", "resolvedType": "FLOAT", "valuesByMode": { "Default": 24 } },
+        { "name": "Card XL", "resolvedType": "FLOAT", "valuesByMode": { "Default": 32 } },
+        { "name": "Pill", "resolvedType": "FLOAT", "valuesByMode": { "Default": 100 } }
+      ]
+    }
+  ]
+}
